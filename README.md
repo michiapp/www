@@ -2,10 +2,6 @@
 
 This is the official landing page for **[michi](https://github.com/michiapp/michi)**, built with [Astro](https://astro.build) and styled with [Tailwind CSS](https://tailwindcss.com).
 
-The site introduces michi, a blazing‑fast local search multiplexer, and provides installation instructions, feature highlights, and documentation links.
-
----
-
 ## Contributing
 
 Contributions are welcome!  
@@ -17,9 +13,6 @@ If you’d like to improve the site, fix a bug, or suggest a feature:
 4. Push to your branch (`git push origin feature/my-feature`)
 5. Open a Pull Request
 
----
-
 ### Notes
-
-- The main **michi CLI** project lives at [michiapp/michi](https://github.com/michiapp/michi).
-- This repo is just for the **website/landing page**.
+The main **michi cli** project lives at [michiapp/michi](https://github.com/michiapp/michi).
+This repo is just for the **website/landing page**.
