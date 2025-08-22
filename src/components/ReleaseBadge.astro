@@ -1,0 +1,41 @@
+---
+import { Rocket } from '@lucide/astro';
+---
+
+<a
+  id="releaseBadge"
+  href="https://github.com/michiapp/michi/releases"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 border border-gray-300 
+         text-sm font-medium text-gray-700 hover:bg-gray-200 transition"
+>
+  <Rocket class="h-4 w-4" />
+  <span id="releaseText">Fetching latest release…</span>
+</a>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const repo = "michiapp/michi";
+
+    try {
+      const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
+      if (!res.ok) throw new Error("Failed to fetch release");
+      const data = await res.json();
+
+      const badge = document.getElementById("releaseBadge");
+      const releaseText = document.getElementById("releaseText");
+
+      if (badge && releaseText) {
+        releaseText.textContent = `${data.tag_name} is out!`;
+        badge.setAttribute("href", data.html_url); // ✅ now points to the latest release page
+      }
+    } catch (err) {
+      console.error("Error fetching release:", err);
+      const releaseText = document.getElementById("releaseText");
+      if (releaseText) {
+        releaseText.textContent = "Could not fetch release";
+      }
+    }
+  });
+</script>

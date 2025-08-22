@@ -1,6 +1,6 @@
 ---
-import { Copy, Github, ChevronDown, Rocket, Flame } from '@lucide/astro';
-import PerformanceBadge from "./PerformanceBadge.astro"
+import { Copy, Github, ChevronDown, Zap } from '@lucide/astro';
+import ReleaseBadge from "./ReleaseBadge.astro"
 import MacOS from "./os/MacOS.astro"
 import Linux from "./os/Linux.astro"
 import Windows from "./os/Windows.astro"
@@ -8,9 +8,9 @@ import Windows from "./os/Windows.astro"
 <section class="min-h-screen py-28 px-4">
   <div class="container mx-auto text-center max-w-4xl mt-6">
 
-    <PerformanceBadge/>
+    <ReleaseBadge/>
 
-    <h1 class="text-5xl font-bold my-6 leading-tight">
+    <h1 class="text-5xl font-semibold my-6 leading-tight">
       Private Search 
       <span class="text-gray-500">Multiplexer</span>
     </h1>
@@ -57,14 +57,14 @@ import Windows from "./os/Windows.astro"
 
     </div>
 
-    <div class="md:hidden flex justify-center mt-6">
-      <a
-        href="#features"
-        class="flex items-center gap-2 px-5 py-3 border border-gray-300 rounded-lg text-sm font-medium bg-gray-900 text-white hover:bg-gray-700 transition"
+
+    <div class="md:hidden flex justify-center">
+      <span
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-50 border border-yellow-400 
+               text-sm font-medium text-yellow-700"
       >
-        <Rocket size={18} />
-        Explore Features
-      </a>
+        <Zap size={18} stroke-width={1}/> Blazingly fast
+      </span>
     </div>
 
     <a
