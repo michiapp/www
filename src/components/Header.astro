@@ -1,16 +1,38 @@
 ---
 import { Github } from '@lucide/astro';
+import michiLogo from '../assets/michi-logo-black.svg';
+
+const githubLink = "https://github.com/michiapp/michi"
 ---
-<header class="px-10 py-4">
-  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-    <span class="text-xl font-bold">michi!</span>
+
+<header class="px-6 py-4">
+  <div class="container mx-auto flex items-center justify-between">
+
+    <div class="flex flex-row gap-2 items-center">
+      <img src={michiLogo.src} width="24" height="24" alt="Michi Logo" />
+      <span class="text-xl font-bold mb-1">michi</span>
+    </div>
+
     <nav class="hidden md:flex items-center space-x-6">
-      <a href="#features" class="text-gray-600 hover:text-gray-900 transition">Features</a>
-      <a href="#docs" class="text-gray-600 hover:text-gray-900 transition">Docs</a>
-      <a href="https://github.com" class="flex flex-row gap-2 px-3 py-1 border rounded text-sm hover:bg-gray-100">
-        <Github size={20}/>
+      <a
+        href={githubLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-row gap-1 px-3 py-1 border border-gray-400 rounded text-sm hover:bg-gray-100"
+      >
+        <Github stroke-width={1} size={20} />
         GitHub
       </a>
     </nav>
+
+    <a
+        href={githubLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="md:hidden flex items-center justify-center w-10 h-10 border border-gray-400 rounded hover:bg-gray-100"
+      aria-label="GitHub"
+    >
+      <Github stroke-width={1} size={20} />
+    </a>
   </div>
 </header>

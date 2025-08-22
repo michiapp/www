@@ -1,36 +1,98 @@
 ---
-import { Copy, Zap } from '@lucide/astro';
+import { Copy, Github, ChevronDown } from '@lucide/astro';
 ---
 <section class="min-h-screen py-20 px-4">
   <div class="container mx-auto text-center max-w-4xl mt-10">
+
     <div class="inline-block bg-amber-200 border-amber-500 border-2 text-gray-800 text-xs px-3 py-1 rounded-full mb-4">
       Blazing Fast
     </div>
+
     <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
       Local Search <br />
       <span class="text-gray-500">Multiplexer</span>
     </h1>
+
     <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-      Your supercharged web navigation workflow is one command away.
+        Supercharged search, zero friction.
     </p>
 
-    <!-- Curl command -->
-    <div class="bg-gray-100 rounded-lg p-4 max-w-md mx-auto font-mono text-sm transition-all hover:shadow-sm active:border-3">
-      curl -sSL get.michi.dev | sh
+    <!-- Desktop: Install command -->
+    <div
+      id="curlCommandBlock"
+      class="hidden md:block group bg-gray-100 rounded-lg p-4 max-w-lg mx-auto font-mono text-sm transition-all
+             hover:shadow-sm active:shadow-md cursor-pointer relative overflow-x-auto whitespace-nowrap"
+    >
+      curl -fsSL https://michi.run/install.sh | sh
+      <span
+        id="copyFeedback"
+        class="absolute bottom-1/2 translate-y-1/2 right-2 text-xs text-green-600 opacity-0 transition-opacity duration-300"
+      />
+      <Copy
+        stroke-width={1}
+        class="group-hover:opacity-60 group-active:opacity-100 absolute bottom-1/2 translate-y-1/2 left-4 opacity-30 transition-opacity"
+      />
     </div>
 
-    <!-- Platforms -->
-    <div class="flex justify-center items-center gap-6 mt-6 text-gray-600">
-      <span class="hover:text-gray-900 cursor-pointer text-sm">macOS</span>
-      <span class="hover:text-gray-900 cursor-pointer text-sm">Linux</span>
-      <span class="hover:text-gray-900 cursor-pointer text-sm">Windows</span>
-    </div>
-
-    <!-- Star GitHub -->
-    <div class="flex justify-center mt-20">
-      <a href="https://github.com" class="px-6 py-3 border rounded text-lg hover:bg-gray-50">
-        ⭐ Star us on GitHub
+    <!-- Mobile: GitHub button -->
+    <div class="md:hidden flex justify-center mt-6">
+      <a
+        href="https://github.com/your-repo"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 px-4 py-2 border rounded-lg text-sm font-medium hover:bg-gray-50"
+      >
+        <Github size={18} />
+        Star us on GitHub
       </a>
     </div>
+
+    <!-- Chevron scroll indicator -->
+    <a
+      href="#features"
+      class="flex animate-bounce justify-center items-center mt-28 text-gray-600 hover:text-gray-900 transition"
+    >
+      <ChevronDown stroke-width={1} size={50} />
+    </a>
+
   </div>
 </section>
+
+<script is:inline>
+  const curlCommandBlock = document.getElementById('curlCommandBlock');
+  const copyFeedback = document.getElementById('copyFeedback');
+  const commandToCopy = "curl -fsSL https://michi.run/install.sh | sh";
+
+  if (curlCommandBlock) {
+    curlCommandBlock.addEventListener('click', async () => {
+      let success = false;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(commandToCopy);
+          success = true;
+        }       
+      } catch (err) {
+        console.error('Failed to copy text:', err);
+        success = false;
+      }
+
+      if (copyFeedback) {
+        if (success) {
+          copyFeedback.textContent = 'Copied!';
+          copyFeedback.classList.remove('text-red-600');
+          copyFeedback.classList.add('text-green-600');
+        } else {
+          copyFeedback.textContent = 'Failed to copy!';
+          copyFeedback.classList.remove('text-green-600');
+          copyFeedback.classList.add('text-red-600');
+        }
+        copyFeedback.classList.add('opacity-100'); 
+
+        setTimeout(() => {
+          copyFeedback.classList.remove('opacity-100'); 
+          setTimeout(() => { copyFeedback.textContent = ''; }, 300);
+        }, 2000);
+      }
+    });
+  }
+</script>
