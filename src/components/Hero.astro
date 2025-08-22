@@ -1,16 +1,21 @@
 ---
 import { Copy, Github, ChevronDown, Rocket, Flame } from '@lucide/astro';
+import PerformanceBadge from "./PerformanceBadge.astro"
+
 ---
 <section class="min-h-screen py-28 px-4">
   <div class="container mx-auto text-center max-w-4xl mt-10">
 
-    <h1 class="text-5xl font-bold mb-6 leading-tight">
+    <PerformanceBadge/>
+
+
+    <h1 class="text-5xl font-bold my-6 leading-tight">
       Private Search 
       <span class="text-gray-500">Multiplexer</span>
     </h1>
 
     <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-        Supercharge your browser with zero friction.
+      Supercharge your browser with zero friction.
     </p>
 
     <div
@@ -32,7 +37,7 @@ import { Copy, Github, ChevronDown, Rocket, Flame } from '@lucide/astro';
     <div class="md:hidden flex justify-center mt-6">
       <a
         href="#features"
-        class="flex items-center gap-2 px-5 py-3 border border-gray-300 rounded-lg text-sm font-medium bg-gray-700 text-white hover:bg-gray-800 transition"
+        class="flex items-center gap-2 px-5 py-3 border border-gray-300 rounded-lg text-sm font-medium bg-gray-900 text-white hover:bg-gray-700 transition"
       >
         <Rocket size={18} />
         Explore Features
