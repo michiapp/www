@@ -1,0 +1,76 @@
+---
+import { Zap, Terminal, Search, Globe, Shield, Monitor } from '@lucide/astro';
+---
+
+<section id="features" class="py-20 px-4 bg-gray-50">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Features</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Everything you need to supercharge your web navigation workflow.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Shortcuts -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <Search class="h-8 w-8 text-gray-700 mb-3" />
+        <h3 class="text-lg font-semibold mb-2">Shortcuts</h3>
+        <p class="text-gray-600">
+          Quickly access your favorite websites with <code class="font-mono">#shortcuts</code>. 
+          Create, list, and delete aliases for URLs in seconds.
+        </p>
+      </div>
+
+      <!-- Sessions -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <Globe class="h-8 w-8 text-gray-700 mb-3" />
+        <h3 class="text-lg font-semibold mb-2">Sessions</h3>
+        <p class="text-gray-600">
+          Launch multiple tabs or workspaces with <code class="font-mono">@sessions</code>. 
+          Group related sites together and open them all at once.
+        </p>
+      </div>
+
+      <!-- Bangs -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <Terminal class="h-8 w-8 text-gray-700 mb-3" />
+        <h3 class="text-lg font-semibold mb-2">Custom Bangs</h3>
+        <p class="text-gray-600">
+          Power up search with <code class="font-mono">!bangs</code>. 
+          Query your favorite sites directly from the address bar.
+        </p>
+      </div>
+
+      <!-- Local & Private -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <Shield class="h-8 w-8 text-gray-700 mb-3" />
+        <h3 class="text-lg font-semibold mb-2">Local & Private</h3>
+        <p class="text-gray-600">
+          All data is stored locally in SQLite — nothing leaves your machine. 
+          Your browsing workflow stays yours.
+        </p>
+      </div>
+
+      <!-- Blazing Fast -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <Zap class="h-8 w-8 text-gray-700 mb-3" />
+        <h3 class="text-lg font-semibold mb-2">Blazing Fast</h3>
+        <p class="text-gray-600">
+          Powered by a tiny Go service with sub-millisecond redirects. 
+          No pop-ups, no lag, just speed.
+        </p>
+      </div>
+
+      <!-- Cross-Platform -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <Monitor class="h-8 w-8 text-gray-700 mb-3" />
+        <h3 class="text-lg font-semibold mb-2">Cross-Platform</h3>
+        <p class="text-gray-600">
+          Works on Linux and Windows, with macOS support coming soon. 
+          One CLI, consistent everywhere.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

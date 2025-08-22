@@ -1,0 +1,69 @@
+
+---
+import { Github, Globe, Database, Cloud } from '@lucide/astro';
+---
+
+<section class="py-20 px-4 bg-gray-50">
+  <div class="container mx-auto text-center max-w-6xl">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12">Michi at the Center</h2>
+    
+    <div class="relative w-96 h-96 mx-auto">
+      <!-- Center node: Michi -->
+      <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div class="bg-blue-600 text-white rounded-full w-24 h-24 flex items-center justify-center font-bold text-lg shadow-lg">
+          Michi
+        </div>
+      </div>
+
+      <!-- Nodes around Michi -->
+      <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <!-- Github -->
+        <div class="absolute" style="transform: translate(-50%, -50%) rotate(0deg) translateX(150px) rotate(0deg);">
+          <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow hover:scale-110 transition">
+            <Github class="w-6 h-6 text-gray-800" />
+          </div>
+        </div>
+        <!-- Google -->
+        <div class="absolute" style="transform: translate(-50%, -50%) rotate(60deg) translateX(150px) rotate(-60deg);">
+          <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow hover:scale-110 transition">
+            <Globe class="w-6 h-6 text-gray-800" />
+          </div>
+        </div>
+        <!-- Wikipedia -->
+        <div class="absolute" style="transform: translate(-50%, -50%) rotate(120deg) translateX(150px) rotate(-120deg);">
+          <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow hover:scale-110 transition">
+            <Globe class="w-6 h-6 text-gray-800" />
+          </div>
+        </div>
+        <!-- Database -->
+        <div class="absolute" style="transform: translate(-50%, -50%) rotate(180deg) translateX(150px) rotate(-180deg);">
+          <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow hover:scale-110 transition">
+            <Database class="w-6 h-6 text-gray-800" />
+          </div>
+        </div>
+        <!-- Cloud -->
+        <div class="absolute" style="transform: translate(-50%, -50%) rotate(240deg) translateX(150px) rotate(-240deg);">
+          <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow hover:scale-110 transition">
+            <Cloud class="w-6 h-6 text-gray-800" />
+          </div>
+        </div>
+        <!-- Another service -->
+        <div class="absolute" style="transform: translate(-50%, -50%) rotate(300deg) translateX(150px) rotate(-300deg);">
+          <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow hover:scale-110 transition">
+            <Globe class="w-6 h-6 text-gray-800" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Connecting lines using SVG -->
+      <svg class="absolute inset-0 w-full h-full">
+        <line x1="50%" y1="50%" x2="50%" y2="0%" stroke="#9CA3AF" stroke-width="2" />
+        <line x1="50%" y1="50%" x2="93%" y2="25%" stroke="#9CA3AF" stroke-width="2" />
+        <line x1="50%" y1="50%" x2="93%" y2="75%" stroke="#9CA3AF" stroke-width="2" />
+        <line x1="50%" y1="50%" x2="50%" y2="100%" stroke="#9CA3AF" stroke-width="2" />
+        <line x1="50%" y1="50%" x2="7%" y2="75%" stroke="#9CA3AF" stroke-width="2" />
+        <line x1="50%" y1="50%" x2="7%" y2="25%" stroke="#9CA3AF" stroke-width="2" />
+      </svg>
+    </div>
+  </div>
+</section>

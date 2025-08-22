@@ -1,0 +1,17 @@
+---
+import { Copy } from '@lucide/astro';
+
+const { text } = Astro.props;
+---
+
+<button
+  type="button"
+  class="p-2 rounded hover:bg-gray-200 transition"
+  onClick={() => {
+    navigator.clipboard.writeText(text);
+    alert('Copied to clipboard!');
+  }}
+  aria-label="Copy to clipboard"
+>
+  <Copy class="w-5 h-5 text-gray-600" />
+</button>
