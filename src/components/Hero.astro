@@ -1,12 +1,14 @@
 ---
 import { Copy, Github, ChevronDown, Rocket, Flame } from '@lucide/astro';
 import PerformanceBadge from "./PerformanceBadge.astro"
+import MacOS from "./os/MacOS.astro"
+import Linux from "./os/Linux.astro"
+import Windows from "./os/Windows.astro"
 ---
 <section class="min-h-screen py-28 px-4">
-  <div class="container mx-auto text-center max-w-4xl mt-10">
+  <div class="container mx-auto text-center max-w-4xl mt-6">
 
     <PerformanceBadge/>
-
 
     <h1 class="text-5xl font-bold my-6 leading-tight">
       Private Search 
@@ -31,6 +33,28 @@ import PerformanceBadge from "./PerformanceBadge.astro"
         stroke-width={1}
         class="group-hover:opacity-60 group-active:opacity-100 absolute bottom-1/2 translate-y-1/2 left-4 opacity-30 transition-opacity"
       />
+    </div>
+
+    <div class="hidden md:flex justify-center items-center gap-8 mt-4 opacity-90">
+
+      <!-- Linux -->
+      <div class="flex items-center gap-2">
+        <Linux class="h-7 w-7" />
+        <span class="text-sm font-medium text-gray-700">Linux</span>
+      </div>
+
+      <!-- macOS (coming soon) -->
+      <div class="flex items-center gap-2 opacity-50 cursor-not-allowed">
+        <MacOS class="h-7 w-7" />
+        <span class="text-sm font-medium text-gray-500">macOS (soon)</span>
+      </div>
+
+      <!-- WSL2 -->
+      <div class="flex items-center gap-2">
+        <Windows class="h-7 w-7" />
+        <span class="text-sm font-medium text-gray-700">WSL2</span>
+      </div>
+
     </div>
 
     <div class="md:hidden flex justify-center mt-6">
