@@ -5,34 +5,34 @@ import michiLogo from '../assets/michi-logo-black.svg';
 const githubLink = "https://github.com/michiapp/michi"
 ---
 
-<header class="px-6 py-4">
+<header class="sticky top-0 z-50 px-6 py-4 backdrop-blur-xl">
   <div class="container mx-auto flex items-center justify-between">
 
-    <div class="flex flex-row gap-2 items-center">
+    <a href="#top" class="flex flex-row gap-2 items-center cursor-pointer">
       <img src={michiLogo.src} width="24" height="24" alt="Michi Logo" />
-      <span class="text-xl font-bold mb-1">michi</span>
-    </div>
+      <span class="hidden md:inline text-xl font-bold mb-1">michi</span>
+    </a>
 
     <nav class="hidden md:flex items-center space-x-6">
       <a
         href={githubLink}
         target="_blank"
         rel="noopener noreferrer"
-        class="flex flex-row gap-1 px-3 py-1 border border-gray-400 rounded text-sm hover:bg-gray-100"
+        class="flex items-center gap-2 px-4 py-2 border rounded-lg text-sm font-medium hover:bg-gray-50"
       >
-        <Github stroke-width={1} size={20} />
+        <Github size={18} />
         GitHub
       </a>
     </nav>
 
     <a
-        href={githubLink}
+      href={githubLink}
       target="_blank"
       rel="noopener noreferrer"
-      class="md:hidden flex items-center justify-center w-10 h-10 border border-gray-400 rounded hover:bg-gray-100"
+      class="md:hidden flex items-center justify-center w-8 h-8 border rounded-lg hover:bg-gray-100"
       aria-label="GitHub"
     >
-      <Github stroke-width={1} size={20} />
+      <Github size={18} />
     </a>
   </div>
 </header>

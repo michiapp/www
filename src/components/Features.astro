@@ -1,70 +1,101 @@
 ---
-import { Zap, Terminal, Search, Globe, Shield, Monitor } from '@lucide/astro';
+import { Search, Globe, Terminal, Layers, History, Settings } from '@lucide/astro';
 ---
 
 <section id="features" class="py-20 px-4 bg-gray-50">
   <div class="container mx-auto max-w-6xl">
+    <!-- Section Header -->
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Features</h2>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Everything you need to supercharge your web navigation workflow.
+        Powerful commands that make your browser feel like a supercharged terminal.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <div class="bg-white rounded-lg shadow p-6">
-        <Search class="h-8 w-8 text-gray-700 mb-3" />
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+      <!-- Shortcuts -->
+      <div class="bg-white border border-black rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
+        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
+          <Search class="h-6 w-6" />
+        </div>
         <h3 class="text-lg font-semibold mb-2">Shortcuts</h3>
         <p class="text-gray-600">
-          Quickly access your favorite websites with <code class="font-mono">#shortcuts</code>. 
-          Create, list, and delete aliases for URLs in seconds.
+          Create quick aliases for your most‑used sites.
         </p>
+        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
+          #michi → https://michi.run/ 
+        </div>
       </div>
 
-      <div class="bg-white rounded-lg shadow p-6">
-        <Globe class="h-8 w-8 text-gray-700 mb-3" />
+      <!-- Sessions -->
+      <div class="bg-white border border-black rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
+        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
+          <Globe class="h-6 w-6" />
+        </div>
         <h3 class="text-lg font-semibold mb-2">Sessions</h3>
         <p class="text-gray-600">
-          Launch multiple tabs or workspaces with <code class="font-mono">@sessions</code>. 
-          Group related sites together and open them all at once.
+          Launch groups of tabs for projects or workflows.
         </p>
+        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
+          @dev → GitHub, Docs, Localhost
+        </div>
       </div>
 
-      <div class="bg-white rounded-lg shadow p-6">
-        <Terminal class="h-8 w-8 text-gray-700 mb-3" />
+      <!-- Bangs -->
+      <div class="bg-white border border-black rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
+        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
+          <Terminal class="h-6 w-6" />
+        </div>
         <h3 class="text-lg font-semibold mb-2">Custom Bangs</h3>
         <p class="text-gray-600">
-          Power up search with <code class="font-mono">!bangs</code>. 
-          Query your favorite sites directly from the address bar.
+          Search any site directly from your address bar.
         </p>
+        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
+          !yt epic jdm cars drifting
+        </div>
       </div>
 
-      <div class="bg-white rounded-lg shadow p-6">
-        <Shield class="h-8 w-8 text-gray-700 mb-3" />
-        <h3 class="text-lg font-semibold mb-2">Local & Private</h3>
+      <!-- History -->
+      <div class="bg-white border border-black rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
+        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
+          <History class="h-6 w-6" />
+        </div>
+        <h3 class="text-lg font-semibold mb-2">History</h3>
         <p class="text-gray-600">
-          All data is stored locally in SQLite. Nothing leaves your machine. 
-          Your browsing workflow stays yours.
+          Review and manage your past queries and shortcuts.
         </p>
+        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
+          michi history list
+        </div>
       </div>
 
-      <div class="bg-white rounded-lg shadow p-6">
-        <Zap class="h-8 w-8 text-gray-700 mb-3" />
-        <h3 class="text-lg font-semibold mb-2">Blazing Fast</h3>
+      <!-- Configurable -->
+      <div class="bg-white border border-black rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
+        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
+          <Settings class="h-6 w-6" />
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Configurable</h3>
         <p class="text-gray-600">
-          Powered by a tiny Go service with sub-millisecond redirects. 
-          No pop-ups, no lag, just speed.
+          Customize prefixes, defaults, and behavior in YAML.
         </p>
+        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
+          ~/.michi/config.yaml
+        </div>
       </div>
 
-      <div class="bg-white rounded-lg shadow p-6">
-        <Monitor class="h-8 w-8 text-gray-700 mb-3" />
-        <h3 class="text-lg font-semibold mb-2">Cross-Platform</h3>
+      <!-- Extensible -->
+      <div class="bg-white border border-black rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
+        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
+          <Layers class="h-6 w-6" />
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Extensible</h3>
         <p class="text-gray-600">
-          Works on Linux and Windows, with macOS support coming soon. 
-          One CLI, consistent everywhere.
+          Add new bangs, sessions, and shortcuts as your workflow grows.
         </p>
+        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
+          michi shortcuts add --alias "docs" --url "https://docs.example.com"
+        </div>
       </div>
     </div>
   </div>
