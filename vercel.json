@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/install.sh", "destination": "/api/install.sh" },
-    { "source": "/uninstall.sh", "destination": "/api/uninstall.sh" }
+    { "source": "/install.sh", "destination": "/api/install" },
+    { "source": "/uninstall.sh", "destination": "/api/uninstall" }
   ]
 }

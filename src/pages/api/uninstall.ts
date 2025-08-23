@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 const githubUrl = 'https://raw.githubusercontent.com/michiapp/michi/main/uninstall.sh';
 
-export const get: APIRoute = async ({ _ }) => {
+export const GET: APIRoute = async ({ _ }) => {
   const res = await fetch(githubUrl);
 
   if (!res.ok) {
