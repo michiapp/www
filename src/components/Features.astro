@@ -1,102 +1,54 @@
 ---
 import { Search, Globe, Terminal, Layers, History, Settings } from '@lucide/astro';
+import FeatureCard from './FeatureCard.astro';
 ---
 
-<section id="features" class="py-20 px-4 bg-gray-50">
+<section id="features" class="py-14 px-4 bg-gray-50 dark:bg-gray-900 transition-colors">
   <div class="container mx-auto max-w-6xl">
-    <!-- Section Header -->
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Features</h2>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Powerful commands that make your browser feel like a supercharged terminal.
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">Features</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Commands that make your browser feel like a supercharged terminal.
       </p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-
-      <!-- Shortcuts -->
-      <div class="bg-white border border-black border-b-4 rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
-        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
-          <Search class="h-6 w-6" />
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Shortcuts</h3>
-        <p class="text-gray-600">
-          Create quick aliases for your most‑used sites.
-        </p>
-        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
-          #michi → https://michi.run/ 
-        </div>
-      </div>
-
-      <!-- Sessions -->
-      <div class="bg-white border border-black border-b-4 rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
-        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
-          <Globe class="h-6 w-6" />
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Sessions</h3>
-        <p class="text-gray-600">
-          Launch groups of tabs for projects or workflows.
-        </p>
-        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
-          @dev → GitHub, Docs, Localhost
-        </div>
-      </div>
-
-      <!-- Bangs -->
-      <div class="bg-white border border-black border-b-4 rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
-        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
-          <Terminal class="h-6 w-6" />
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Custom Bangs</h3>
-        <p class="text-gray-600">
-          Search any site directly from your address bar.
-        </p>
-        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
-          !yt epic jdm cars drifting
-        </div>
-      </div>
-
-      <!-- History -->
-      <div class="bg-white border border-black border-b-4 rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
-        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
-          <History class="h-6 w-6" />
-        </div>
-        <h3 class="text-lg font-semibold mb-2">History</h3>
-        <p class="text-gray-600">
-          Review and manage your past queries and shortcuts.
-        </p>
-        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
-          michi history list
-        </div>
-      </div>
-
-      <!-- Configurable -->
-      <div class="bg-white border border-black border-b-4 rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
-        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
-          <Settings class="h-6 w-6" />
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Configurable</h3>
-        <p class="text-gray-600">
-          Customize prefixes, defaults, and behavior in YAML.
-        </p>
-        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
-          ~/.michi/config.yaml
-        </div>
-      </div>
-
-      <!-- Extensible -->
-      <div class="bg-white border border-black border-b-4 rounded-lg p-4 md:p-6 hover:shadow-md hover:-translate-y-1 transition">
-        <div class="h-12 w-12 flex items-center justify-center rounded-md bg-gray-100 text-gray-700 mb-4">
-          <Layers class="h-6 w-6" />
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Extensible</h3>
-        <p class="text-gray-600">
-          Add new bangs, sessions, and shortcuts as your workflow grows.
-        </p>
-        <div class="mt-3 bg-gray-50 rounded p-2 font-mono text-xs text-gray-700 overflow-x-auto">
-          michi shortcuts add --alias "docs" --url "https://docs.example.com"
-        </div>
-      </div>
+      <FeatureCard 
+        icon={Search} 
+        title="Shortcuts" 
+        description="Create quick aliases for your most-used sites." 
+        code="#michi → https://michi.run/" 
+      />
+      <FeatureCard 
+        icon={Globe} 
+        title="Sessions" 
+        description="Launch groups of tabs for projects or workflows." 
+        code="@dev → GitHub, Docs, Localhost" 
+      />
+      <FeatureCard 
+        icon={Terminal} 
+        title="Custom Bangs" 
+        description="Search any site directly from your address bar." 
+        code="!yt epic jdm cars drifting" 
+      />
+      <FeatureCard 
+        icon={History} 
+        title="History" 
+        description="Review and manage your past queries and shortcuts." 
+        code="michi history list" 
+      />
+      <FeatureCard 
+        icon={Settings} 
+        title="Configurable" 
+        description="Customize prefixes, defaults, and behavior in YAML." 
+        code="~/.michi/config.yaml" 
+      />
+      <FeatureCard 
+        icon={Layers} 
+        title="Extensible" 
+        description="Add new bangs, sessions, and shortcuts as your workflow grows." 
+        code='michi shortcuts add --alias "docs" --url "https://docs.example.com"' 
+      />
     </div>
   </div>
 </section>

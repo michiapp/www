@@ -1,0 +1,26 @@
+---
+import { Sun, Moon } from "@lucide/astro";
+---
+
+<button
+  client:load
+  id="theme-toggle"
+  class="p-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+>
+  <span class="dark:hidden"><Moon size={18} /></span>
+  <span class="hidden dark:inline"><Sun size={18} /></span>
+</button>
+
+<script is:inline>
+  const toggleButton = document.getElementById("theme-toggle");
+  toggleButton?.addEventListener("click", () => {
+    const root = document.documentElement;
+    if (root.classList.contains("dark")) {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    } else {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    }
+  });
+</script>

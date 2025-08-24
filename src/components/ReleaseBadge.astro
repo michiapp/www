@@ -7,8 +7,10 @@ import { Rocket } from '@lucide/astro';
   href="https://github.com/michiapp/michi/releases"
   target="_blank"
   rel="noopener noreferrer"
-  class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 border border-gray-300 
-         text-sm font-medium text-gray-700 hover:bg-gray-200 transition"
+  class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full 
+         bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700
+         text-sm font-medium text-gray-700 dark:text-gray-200 
+         hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
 >
   <Rocket class="h-4 w-4" />
   <span id="releaseText">Fetching latest release…</span>
@@ -28,7 +30,7 @@ import { Rocket } from '@lucide/astro';
 
       if (badge && releaseText) {
         releaseText.textContent = `${data.tag_name} is out!`;
-        badge.setAttribute("href", data.html_url); // ✅ now points to the latest release page
+        badge.setAttribute("href", data.html_url);
       }
     } catch (err) {
       console.error("Error fetching release:", err);
